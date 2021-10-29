@@ -8,22 +8,28 @@ public class FirstLambdas {
 	public static void main(String[] args) {
 
 		// Supplier
-		Supplier<String> supplier = () -> {
+//		Use {} for multiple lines of code
+//		{} are optional if you only have one short line of code
+//		if you use {} you must include a return statement if your interface requires it
+//		i.e. Supplier requires a return, Consumer does not
+ 		Supplier<String> supplier = () -> {
 
 			System.out.println("I am inside the Supplier");
 			return "Hello!"; 
 		};
 
 //		Invocation of supplier Lambda expression
+//		Supplier has a get method
 		String string = supplier.get();
 		System.out.println("string = " + string);
-		
-		// Consumer
+
 		Consumer<String> consumer = 
 				(String s) -> {
 					System.out.println("I am inside the Consumer");
 					System.out.println(s);
 				};
+
+//		Consumer has an accept method
 		consumer.accept("Hello");
 		
 	}
