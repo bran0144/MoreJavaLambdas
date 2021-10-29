@@ -11,9 +11,20 @@ public class MoreLambdas {
 
 		List<String> strings = 
 				new ArrayList<>(List.of("one", "two", "three", "four", "five"));
-		
+
+//		long version
+		Predicate<String> filter = (String string) -> !string.startsWith("t");
+		strings.removeIf(filter);
+//		short version
 		strings.removeIf(string -> !string.startsWith("t"));
+
+
+//		long version
+		Consumer<String> action = (String string) -> System.out.println(string);
+		strings.forEach(action);
+//		short version
 		strings.forEach(string -> System.out.println(string));
+
 	}
 }
 
