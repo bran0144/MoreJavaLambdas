@@ -1,4 +1,4 @@
-package org.paumard.lambdas.model;
+package org.paumard.lambdas;
 
 public class User {
 

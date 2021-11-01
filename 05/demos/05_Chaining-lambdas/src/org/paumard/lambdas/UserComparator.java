@@ -4,8 +4,6 @@ import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
 
-import org.paumard.lambdas.model.User;
-
 public class UserComparator {
 
 	public static void main(String[] args) {
@@ -20,6 +18,7 @@ public class UserComparator {
 		
 		Comparator<User> cmpName = Comparator.comparing(user -> user.getName());
 		Comparator<User> cmpAge = Comparator.comparing(user -> user.getAge());
+//		Chaining here allows you to first compare on name, then on age when sorting
 		Comparator<User> comparator = cmpName.thenComparing(cmpAge);
 		Comparator<User> reversed = comparator.reversed();
 		
@@ -27,6 +26,11 @@ public class UserComparator {
 		users.forEach(u -> System.out.println(u));
 	}
 }
+/*
+Notes:
+Default method for Comparator (thenComparing,reversed, etc.)
+
+ */
 
 
 
